@@ -1,0 +1,4 @@
+
+import = [
+    "~/.config/dotfiles/configs/alacritty_theme.toml"
+]
