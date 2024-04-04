@@ -1,68 +1,22 @@
--- Mappings
-vim.g.mapleader = ' '
-vim.api.nvim_set_keymap('n', '<leader>b', ':BufferPick<CR>', {
-    noremap = true,
-    silent = true,
-    desc = 'Enter [B]ufferPick mode'
-})
+require('mappings')
 
--- Toggle Inlay Hints
-vim.api.nvim_set_keymap('n', 'V', ':lua vim.lsp.inlay_hint(0, nil)<CR>', {
-        noremap = true,
-        silent = true,
-        desc = 'Toggle [V]isual inlay hints'
-})
+require('options')
 
--- Disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- Enable highlight groups
-vim.opt.termguicolors = true
-
--- toggle both numbers and relativenumbers on, vim.cmd
-vim.cmd('set number relativenumber')
-
--- Telescope Mappings
-vim.api.nvim_set_keymap('n', 'T', ':Telescope<CR>',{
-    noremap = true,
-    silent = true,
-    desc = 'Launch [T]elescope'
-})
-
-vim.api.nvim_set_keymap('n', 'F', ':Telescope find_files<CR>', {
-    noremap = true,
-    silent = true,
-    desc = 'Find [F]iles'
-})
-
-vim.api.nvim_set_keymap('n', 'B', ':Telescope buffers<CR>', {
-    noremap = true,
-    silent = true,
-    desc = 'Search in current [B]uffer'
-})
-
--- Options
-vim.opt.textwidth = 80
-
--- tab width
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
 
 -- Plugins
 require('packer').startup(function(use)
 
-  use { 'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons',
-    },
-  }
+    -- File explorer
+      use { 'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons',
+        },
+      }
 
     use 'wbthomason/packer.nvim'
         -- Theme
-    use { 'folke/tokyonight.nvim', as = "tokyonight"}
-    vim.cmd('colorscheme tokyonight')
+    use { 'shatur/neovim-ayu', as = "ayu"}
+    vim.cmd('colorscheme ayu-mirage')
 
     -- barbar
     use 'romgrk/barbar.nvim'
@@ -104,6 +58,7 @@ require('packer').startup(function(use)
 end)
 
 
+
 -- LSP stuff
 require('mason').setup()
 require('mason-lspconfig').setup({
@@ -112,14 +67,18 @@ require('mason-lspconfig').setup({
 })
 
 local on_attach = function(_, _)
-        -- No idea what these do
         --vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+        -- Code actions
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-        -- These I know
-    vim.keymap.set('n', 'E', vim.diagnostic.open_float, {})
+        -- Show definition.
+        vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
+        -- Show error diagnostic
+        vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, {})
+        -- Show implementation
         vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, {})
+        -- Show reference
         vim.keymap.set('n', '<leader>r', require('telescope.builtin').lsp_references, {})
+        -- Show Options, K is not bound by default.
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 end
 
@@ -234,11 +193,27 @@ cmp.setup {
 
 require('nvim-tree').setup()
 
+require('ayu').setup({
+    overrides = {
+        Normal = { bg = "None" },
+        ColorColumn = { bg = "None" },
+        SignColumn = { bg = "None" },
+        Folded = { bg = "None" },
+        FoldColumn = { bg = "None" },
+        CursorLine = { bg = "None" },
+        CursorColumn = { bg = "None" },
+        WhichKeyFloat = { bg = "None" },
+        VertSplit = { bg = "None" },
+    },
+})
 require('lualine').setup {
     options = {
-        theme = 'palenight'
+        theme = 'ayu'
     }
 }
+
+-- Keep near the end of the file
+require('settings')
 
 
 -- Must always be at end of file else it gives me a lot of issues lol
