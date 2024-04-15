@@ -16,8 +16,8 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
         -- Theme
     use { 'shatur/neovim-ayu', as = "ayu"}
-    vim.cmd('colorscheme ayu-mirage')
-
+    -- vim.cmd('colorscheme ayu-dark')
+    vim.cmd('colorscheme tokyonight-night')
     -- barbar
     use 'romgrk/barbar.nvim'
 
@@ -56,7 +56,6 @@ require('packer').startup(function(use)
     -- Not copilot
     use 'github/copilot.vim'
 end)
-
 
 
 -- LSP stuff
