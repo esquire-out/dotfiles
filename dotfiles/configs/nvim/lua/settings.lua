@@ -7,7 +7,6 @@ vim.opt.scrolloff = 16
 vim.opt.wrap = false
 vim.opt.inccommand = 'split' -- Live substitution preview
 
-
 -- TODO: Actually make it a toggle...
 -- TODO: Add missing highlights, such as borders.
 function Toggle_transparency()
@@ -23,7 +22,6 @@ function Toggle_transparency()
     vim.cmd[[hi NvimTreeNormalNC guibg=none]]
 end
 
-
 function Open_config()
     if vim.fn.has('win32') == 1 then
         -- init.lua SHOULD be in this directory.
@@ -33,8 +31,9 @@ function Open_config()
     end
 end
 
--- TODO: add a description for telescope.
+
 vim.cmd('command! ConfigLocation :lua Open_config()')
+-- NOTE do this
 vim.cmd('command! ConfigTransparency :lua Toggle_transparency()')
 
 

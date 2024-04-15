@@ -43,7 +43,6 @@ require('packer').startup(function(use)
                 tag = '0.1.4',
                 requires = {{ 'nvim-lua/plenary.nvim' }}
         }
-    
     use 'mfussenegger/nvim-dap'
 
     -- Autocompletion
@@ -53,10 +52,18 @@ require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip' -- Snippets engine
     use 'saadparwaiz1/cmp_luasnip' -- LuaSnip source for nvim-cmp
 
+
+    -- Highlights
+    use {
+        'folke/todo-comments.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
+
     -- Not copilot
     use 'github/copilot.vim'
 end)
-
 
 -- LSP stuff
 require('mason').setup()
@@ -67,18 +74,42 @@ require('mason-lspconfig').setup({
 
 local on_attach = function(_, _)
         --vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
-        -- Code actions
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-        -- Show definition.
-        vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
-        -- Show error diagnostic
-        vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, {})
-        -- Show implementation
-        vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, {})
-        -- Show reference
-        vim.keymap.set('n', '<leader>r', require('telescope.builtin').lsp_references, {})
-        -- Show Options, K is not bound by default.
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {
+            desc = "List available code actions"
+        })
+
+        vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {
+            desc = "Go to definition"
+        })
+
+        vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, {
+            desc = "Show error diagnostic"
+        })
+
+        vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, {
+            desc = "Show implementation"
+        })
+
+        vim.keymap.set('n', '<leader>r', require('telescope.builtin').lsp_references, {
+            desc = "Show references to symbol"
+        })
+
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {
+            -- NOTE Keep in mind that 'K' is not bound by default.
+            desc = "Show hover information"
+        })
+
+        vim.keymap.set('n', 'T', vim.diagnostic.goto_next, {
+            desc = "Go to next Diagnostic message"
+        })
+
+        vim.keymap.set('n', 'Y', vim.diagnostic.goto_prev, {
+            desc = "Go to previous Diagnostic message"
+        })
+
+        vim.keymap.set('n', '<leader>L', vim.diagnostic.setloclist, {
+            desc = "Show [L]ist of diagnostic messages"
+        })
 end
 
 local dap = require('dap')
@@ -214,6 +245,8 @@ require('lualine').setup {
 -- Keep near the end of the file
 require('settings')
 
+
+require('comments')
 
 -- Must always be at end of file else it gives me a lot of issues lol
 require('copilot').setup()

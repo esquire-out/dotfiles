@@ -27,6 +27,8 @@ vim.api.nvim_set_keymap('n', '<leader>V', ':lua vim.lsp.inlay_hint(0, nil)<CR>',
         desc = 'Toggle [V]isual inlay hints'
 })
 
+
+
 -- Toggle NerdTree
 vim.api.nvim_set_keymap('n', '<leader>nt', ':NvimTreeToggle<CR>', {
     noremap = true,
