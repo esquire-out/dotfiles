@@ -14,11 +14,16 @@ require('packer').startup(function(use)
       }
 
     use 'wbthomason/packer.nvim'
-        -- Theme
-    use { 'shatur/neovim-ayu', as = "ayu"}
-    -- vim.cmd('colorscheme ayu-dark')
-    vim.cmd('colorscheme tokyonight-night')
-    -- barbar
+
+    -- Theme
+    use {
+        'shatur/neovim-ayu',
+        as = "ayu"
+    }
+
+    use 'folke/tokyonight.nvim'
+
+    -- WARN  Might be unused.
     use 'romgrk/barbar.nvim'
 
     -- LuaLine
@@ -27,22 +32,22 @@ require('packer').startup(function(use)
         requires = {'nvim-tree/nvim-web-devicons', opt = true}
     }
 
-        -- Treesitter
-        use 'nvim-treesitter/nvim-treesitter'
+    -- Treesitter
+    use 'nvim-treesitter/nvim-treesitter'
 
-        -- Mason
-        use {
-                'williamboman/mason.nvim',
-                'williamboman/mason-lspconfig.nvim',
-                'neovim/nvim-lspconfig',
-        }
+    -- Mason
+    use {
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',
+    }
 
-        -- Telescope
-        use {
-                'nvim-telescope/telescope.nvim',
-                tag = '0.1.4',
-                requires = {{ 'nvim-lua/plenary.nvim' }}
-        }
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.4',
+        requires = {{ 'nvim-lua/plenary.nvim' }}
+    }
     use 'mfussenegger/nvim-dap'
 
     -- Autocompletion
@@ -86,11 +91,11 @@ local on_attach = function(_, _)
             desc = "Show error diagnostic"
         })
 
-        vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, {
+        vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, {
             desc = "Show implementation"
         })
 
-        vim.keymap.set('n', '<leader>r', require('telescope.builtin').lsp_references, {
+        vim.keymap.set('n', '<leader>gr', require('telescope.builtin').lsp_references, {
             desc = "Show references to symbol"
         })
 
@@ -107,7 +112,7 @@ local on_attach = function(_, _)
             desc = "Go to previous Diagnostic message"
         })
 
-        vim.keymap.set('n', '<leader>L', vim.diagnostic.setloclist, {
+        vim.keymap.set('n', '<leader>L', require('telescope.builtin').diagnostics, {
             desc = "Show [L]ist of diagnostic messages"
         })
 end
@@ -132,6 +137,8 @@ dap.configurations.cpp = {
         args = {}
     },
 }
+
+
 
 require('lspconfig').lua_ls.setup {
         on_attach = on_attach
@@ -223,28 +230,15 @@ cmp.setup {
 
 require('nvim-tree').setup()
 
-require('ayu').setup({
-    overrides = {
-        Normal = { bg = "None" },
-        ColorColumn = { bg = "None" },
-        SignColumn = { bg = "None" },
-        Folded = { bg = "None" },
-        FoldColumn = { bg = "None" },
-        CursorLine = { bg = "None" },
-        CursorColumn = { bg = "None" },
-        WhichKeyFloat = { bg = "None" },
-        VertSplit = { bg = "None" },
-    },
-})
+
 require('lualine').setup {
     options = {
-        theme = 'ayu'
+        theme = 'nightfly'
     }
 }
 
 -- Keep near the end of the file
 require('settings')
-
 
 require('comments')
 

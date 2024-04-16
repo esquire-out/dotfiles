@@ -1,11 +1,6 @@
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.list = true
-vim.opt.listchars = {eol = '↩'}
-vim.opt.scrolloff = 16
-vim.opt.wrap = false
-vim.opt.inccommand = 'split' -- Live substitution preview
+
+vim.cmd('colorscheme tokyonight-night')
 
 -- TODO: Actually make it a toggle...
 -- TODO: Add missing highlights, such as borders.
@@ -33,7 +28,6 @@ end
 
 
 vim.cmd('command! ConfigLocation :lua Open_config()')
--- NOTE do this
 vim.cmd('command! ConfigTransparency :lua Toggle_transparency()')
 
 

@@ -1,4 +1,6 @@
 vim.g.mapleader = ' '
+
+
 -- Mappings
 vim.api.nvim_set_keymap('n', '<leader>F', ':Telescope find_files<CR>', {
     noremap = true,
@@ -46,13 +48,11 @@ vim.api.nvim_set_keymap('n', '<leader>T', ':Telescope<CR>',{
 
 
 -- Formatter stuff
-
 local function fmt_helper( num )
     vim.api.nvim_win_set_cursor(0, {num, 1})
     vim.api.nvim_feedkeys('<CR>', 'n', true)
 end
 
--- TODO
 
 function Buf_fmt()
     local buf_filetype = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -62,12 +62,14 @@ function Buf_fmt()
 
     if buf_filetype == 'cpp' or buf_filetype == 'c' or buf_filetype == 'h' then
         print('Formatting C/C++ file')
-        vim.api.nvim_command('%!clang-format -style=LLVM') -- TODO: find preferred style
+        -- TODO  Test other styles, or configure one.
+        vim.api.nvim_command('%!clang-format -style=LLVM')
         fmt_helper(last_pos)
 
     elseif buf_filetype == 'rs' then
         print('Formatting Rust file')
-        vim.api.nvim_command('!rustfmt') -- TODO Test this.
+        -- TODO  Test this.
+        vim.api.nvim_command('!rustfmt')
 
     else
         print('No formatter configured for (' .. buf_filetype .. ') filetype')
@@ -81,7 +83,6 @@ vim.api.nvim_set_keymap('n', '<leader>ff', ":lua Buf_fmt()<CR>", {
 })
 
 
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 -- From kickstart.nvim 
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
