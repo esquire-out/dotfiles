@@ -18,7 +18,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.list = true
-vim.opt.listchars = {eol = '↩'}
+vim.opt.listchars = {eol = '↩', tab = '▸ ', trail = '·'}
 
 vim.opt.scrolloff = 16
 vim.opt.wrap = false

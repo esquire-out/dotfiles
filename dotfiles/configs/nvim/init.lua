@@ -6,24 +6,23 @@ require('options')
 -- Plugins
 require('packer').startup(function(use)
 
+    use "startup-nvim/startup.nvim"
+
     -- File explorer
-      use { 'nvim-tree/nvim-tree.lua',
-      requires = {
-        'nvim-tree/nvim-web-devicons',
-        },
-      }
+    use { 'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+      },
+    }
 
     use 'wbthomason/packer.nvim'
 
-    -- Theme
-    use {
-        'shatur/neovim-ayu',
-        as = "ayu"
-    }
+    -- Theme(s)
+    use 'shatur/neovim-ayu'
 
     use 'folke/tokyonight.nvim'
 
-    -- WARN  Might be unused.
+    -- WARN  Might be unused!
     use 'romgrk/barbar.nvim'
 
     -- LuaLine
@@ -66,7 +65,7 @@ require('packer').startup(function(use)
         }
     }
 
-    -- Not copilot
+    -- TODO  Disable on startup.
     use 'github/copilot.vim'
 end)
 
@@ -239,7 +238,7 @@ require('lualine').setup {
 
 -- Keep near the end of the file
 require('settings')
-
+require('homescreen')
 require('comments')
 
 -- Must always be at end of file else it gives me a lot of issues lol

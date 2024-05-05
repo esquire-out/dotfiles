@@ -1,0 +1,75 @@
+
+/* Tokyo Night Theme */
+@define-color background1 #1f2335;
+@define-color background2 #24283b;
+@define-color background3 #292e42;
+@define-color background4 #3b4261;
+@define-color background5 #414868;
+
+
+@define-color foreground1 #545c7e;
+@define-color foreground2 #565f89;
+@define-color foreground3 #737aa2;
+@define-color foreground4 #a9b1d6;
+@define-color foreground5 #c0caf5;
+
+
+@define-color purple      #bb9af7;
+@define-color purple-dark #9d7cd8;
+
+
+* {
+    font-family: Mononoki Nerd Font;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar {
+    color: @foreground5;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#workspaces button {
+  background-color: @background1;
+  color: @foreground4;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#workspaces button.empty {
+    color: @foreground1;
+}
+
+#workspaces button.active {
+    color: #c0caf5;
+    background-color: @background3;
+    border-radius: 3px;
+}
+
+#wireplumber,
+#bat,
+#tray,
+#usage,
+#net {
+    background-color: @background1;
+    border-radius: 3px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-left: 0.3em;
+}
+
+#clock {
+  color: @foreground5;
+  background-color: @background1;
+  padding-left: 5.5em;
+  padding-right: 5.5em;
+  border-radius: 5px;
+}
+
+#battery,
+#memory,
+#language,
+#network {
+    margin-right: 0.8em;
+}

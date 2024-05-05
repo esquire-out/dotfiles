@@ -66,6 +66,11 @@ function Buf_fmt()
         vim.api.nvim_command('%!clang-format -style=LLVM')
         fmt_helper(last_pos)
 
+    elseif buf_filetype == 'go' then
+        print('Formatting Go file')
+        vim.api.nvim_command('!gofmt -w %')
+        fmt_helper(last_pos)
+
     elseif buf_filetype == 'rs' then
         print('Formatting Rust file')
         -- TODO  Test this.

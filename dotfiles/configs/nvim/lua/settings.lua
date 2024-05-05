@@ -26,8 +26,13 @@ function Open_config()
     end
 end
 
+function Write_and_DropBuffer()
+  vim.cmd('w')
+  vim.cmd('bd')
+end
 
 vim.cmd('command! ConfigLocation :lua Open_config()')
 vim.cmd('command! ConfigTransparency :lua Toggle_transparency()')
+vim.cmd('command! Q :lua Write_and_DropBuffer()')
 
 
