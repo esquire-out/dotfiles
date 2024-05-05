@@ -1,9 +1,15 @@
 # dotfiles
 My configuration files for `picom`, `alacritty`, `i3wm`, and `neovim`.
-
-- [x] Refactor neovim config file into multiple files.
-- [ ] Add an optional picom config file with blur.
-- [ ] Add and configure polybar.
-- [ ] Add and configure conky.
-- [ ] Gather more wallpapers.
-
+Contains config files for the following:
+- Picom
+- Alacritty
+- i3wm
+- Neovim
+- Hyprland
+- Zsh/Bash
+- Utility scripts
+- Ansible (TODO)
+- Waybar
+- Wofi
+- Font configs
+And also some wallpapers!
