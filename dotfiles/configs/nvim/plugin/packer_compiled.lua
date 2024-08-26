@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/azure/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/home/azure/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/home/azure/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/home/azure/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/azure/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
+local package_path_str = "C:\\Users\\Azure\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1713484068\\share\\lua\\5.1\\?.lua;C:\\Users\\Azure\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1713484068\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\Azure\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1713484068\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\Azure\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1713484068\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\Azure\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1713484068\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,112 +76,142 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["barbar.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
+  },
+  ["boo-colorscheme-nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\boo-colorscheme-nvim",
+    url = "https://github.com/rockerBOO/boo-colorscheme-nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["copilot.vim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\copilot.vim",
     url = "https://github.com/github/copilot.vim"
+  },
+  ["darc.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\darc.nvim",
+    url = "https://github.com/PyGamer0/darc.nvim"
+  },
+  falcon = {
+    loaded = true,
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\falcon",
+    url = "https://github.com/fenetikm/falcon"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["neovim-ayu"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/neovim-ayu",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neovim-ayu",
     url = "https://github.com/shatur/neovim-ayu"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  pinkmare = {
+    loaded = true,
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\pinkmare",
+    url = "https://github.com/matsuuu/pinkmare"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["startup.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/startup.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\startup.nvim",
     url = "https://github.com/startup-nvim/startup.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/home/azure/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    path = "C:\\Users\\Azure\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   }
 }

@@ -1,6 +1,6 @@
 
 
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd('colorscheme material-darker')
 
 -- TODO: Actually make it a toggle...
 -- TODO: Add missing highlights, such as borders.

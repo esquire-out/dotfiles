@@ -19,6 +19,12 @@ require('packer').startup(function(use)
 
     -- Theme(s)
     use 'shatur/neovim-ayu'
+    use 'fenetikm/falcon'
+    use 'rockerBOO/boo-colorscheme-nvim'
+    use 'PyGamer0/darc.nvim'
+    use 'rktjmp/lush.nvim'
+    use 'matsuuu/pinkmare'
+    use 'marko-cerovac/material.nvim'
 
     use 'folke/tokyonight.nvim'
 
